@@ -1,0 +1,64 @@
+h1 {
+    color:antiquewhite;
+}
+
+span {
+    color: olive;
+}
+
+
+p {
+    color:blue;
+}
+
+#Name {
+    color:purple
+}
+
+.About {
+    color: burlywood
+}
+
+p:hover {
+    font-size: 32px;
+}
+
+span::before {
+    margin-left: 10px;
+}
+
+@media screen and (max-width:480px) {
+    h2 {
+        background-color: bisque;
+    }
+}
+
+@media screen and (max-width:900px) {
+
+    body {
+        background-color: red;
+    }
+}
+
+
+section {
+    border: 1px red solid;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.container3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
