@@ -1,0 +1,142 @@
+/* Index Page */
+
+body {
+    height:100vh;
+    background-image: url('contact.JPG');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* Styling the navbar */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: relative; /* Make the navbar sticky */
+    top: 0; /*Stick to the top */
+    width: 100%; /* Full width */
+    z-index: 1000;/*  Ensure it's on top of other content */
+}
+
+/* Navbar contents styles */ 
+.navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: aliceblue;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+/* Add padding to content to avoid being hidden under the navbar */
+.content {
+  padding: 100px 20px; 
+}
+
+/* Right align */
+.right-align {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    text-align: right; 
+    padding: 20px; 
+}
+
+p {
+    max-height: 300px; /* Set a max height */
+    overflow-y: auto;  /* Add vertical scrolling if content exceeds max height */
+    line-height: 1.2;  /* Adjust line height for better spacing */
+    max-width: 320px;
+}
+
+  
+/* h1 {
+    color:antiquewhite;
+    text-shadow: 15px 10px gainsboro;
+}
+h2 {
+    color:antiquewhite;
+}
+
+span {
+    margin-left: 50px;
+    color: olive; 
+} */
+
+.Welcome {
+    font-family: Cursive;
+}
+
+./Welcome{
+    font-family: Cursive;
+}
+
+.Aspiring-title {
+    font-size: 18px;
+}
+
+
+#Name {
+    color:purple
+}
+
+.job-title {
+    color: burlywood
+}
+
+/* Hover effect on body */
+/* p:hover {
+    font-size: 18px;
+} */
+
+span::before {
+    margin-left: 10px;
+}
+
+@media screen and (max-width:480px) {
+    h2 {
+        background-color: bisque;
+    }
+}
+
+@media screen and (max-width:900px) {
+
+    body {
+        background-color: olivedrab;
+    }
+}
+
+
+
+
+/* Footer stylling */
+.page-footer {
+    background-color: aliceblue;       /* Dark background color for contrast */
+    color: black;                 /* White text for visibility */
+    text-align: center;          /* Center-align the text */
+    padding: 15px 10px 10px 550px;             /* Add some vertical padding */
+    font-size: 0.9rem;           /* Slightly smaller font size */
+    position: relative;          /* Or use fixed/sticky for certain effects */
+    bottom: 0;                   /* Ensure it sticks to the bottom */
+    width: 100%;                 /* Make it span the entire page width */
+    border-top: 1px solid #444; 
+}
+
+/* Responsive Design (Optional) */
+@media (max-width: 768px) {
+    .page-footer {
+        font-size: 0.8rem;        /* Adjust font size for smaller screens */
+        padding: 10px 0;         /* Reduce padding on smaller screens */
+    }
+}
+
+

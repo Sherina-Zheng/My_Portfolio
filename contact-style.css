@@ -1,0 +1,132 @@
+/* Styling the navbar */
+
+
+/* Styling the responsive email input box */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.form{
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+input[type="email"] {
+    width: 100%; /* Full width inside the form */
+    padding: 10px; /* Adjust padding for input field */
+    border: 2px solid #86BAA1; /* Custom border color */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem; /* Adjust font size */
+    color: #333;
+    background-color: #f9f9f9;
+    margin-bottom: 15px; /* Space below the input */
+    transition: all 0.3s ease; /* Smooth transition on focus */
+}
+
+input[type="email"]:focus {
+    border-color: #005f73; /* Darker border on focus */
+    outline: none;
+    background-color: #e6f5f9; /* Light background on focus */
+}
+
+/* res */
+/* Container for the form */
+.contact-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Flex container for input and image */
+.input-image-container {
+    display: flex;
+    justify-content: space-between; /* Space between the input and image */
+    width: 100%;
+    max-width: 600px; /* Optional: limit the container size */
+    align-items: center; /* Center vertically */
+}
+
+/* Email input column */
+.input-column {
+    flex: 1; /* This allows the input to take up remaining space */
+    padding-right: 20px; /* Add some space between the input and image */
+}
+
+/* Style for the email input */
+#email {
+    width: 100%; /* Make input fill the column */
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 2px solid #86BAA1;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+
+/* Style for the submit button */
+.submit-btn {
+    background-color: #86BAA1 !important;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #76A091 !important;
+}
+
+/* Responsive Design: Stack vertically on smaller screens */
+@media (max-width: 768px) {
+    .input-image-container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        align-items: center; /* Center the items */
+    }
+    .input-column, .image-column {
+        width: 100%; /* Make both the input and image full width */
+        padding-right: 0; /* Remove padding for full-width */
+        padding-left: 0; /* Remove padding for full-width */
+        margin-bottom: 20px; /* Add margin between input and image */
+    }
+    #email {
+        width: 100%; /* Ensure email input is full width on mobile */
+    }
+}
+
+
+/* Background Image */
+body {
+    background-image: url(LAKE-BACKGROUND.JPG);
+  }
+
+  
+  /* Icon Styling */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between icons */
+    margin-top: 10px;
+}
+
+.social-link {
+    color: #333; /* Default color */
+    font-size: 1.5rem; /* Adjust icon size */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.social-link:hover {
+    color: #0077b5; /* LinkedIn blue as an example */
+}

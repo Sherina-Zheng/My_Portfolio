@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="contact-style.css" rel="stylesheet" type="text/css">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Contact</title>
+    <!--Bootstrap CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="contact-style.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400&display=swap" rel="stylesheet">
+    <!-- Other head elements -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
+</head>
+
+
+ <!-- Navbar -->
+ <nav class="navbar navbar-light">
+    <div class="container-fluid d-flex justify-content-between">
+       
+        <!-- Navbar Toggler Hamburger TOP LEFT-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggler Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible menu LEFT -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">  
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="index.html">About</a>
+                <!-- Replace nav items -->
+                <a class="nav-link" href="case_study.html">Case Study</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="plantidentifier.html">Plant Identifier</a>
+                <!-- Logo CENTER-->
+                <a class="navbar-brand mx-auto" href="index.html">
+                    <img src="sherina z..png" alt="Logo" style="width:200px; height:150px;">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+      
+
+
+        <!-- Email inputs -->
+        <div class="container my-5">
+            <div class="text-center mb-4">
+        </div>
+                    
+            <div class="row align-items-center">
+            <!-- Email Input & Submit Button -->
+                <div class="col-md-6">
+                    <h1>Oh hi! Wanna stay in touch?</h1>
+                        <br></br>
+                        <h3>Shoot me an email or simply connect through socials below.</h3>
+                        <br></br>
+                 
+
+                <form id="email-form" class="text-center">
+                    <div class="row">
+                        <label for="user_email" class="form-label">May you have a great day~</label>
+                            <div class="col-md">
+                                <input type="name" id="user_name" name="user_name" class="form-control form-control-lg" placeholder="Name" required>
+                            </div>
+                            <div class="col-md">
+                                <input type="email" id="user_email" name="user_email" class="form-control form-control-lg" placeholder="Email" required>
+                            </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="user_message" class="form-label"></label>
+                        <textarea id="user_message" name="user_message" class="form-control form-control-lg" rows="5" placeholder="Type your message here" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+          
+
+
+                <!-- Image Next to Input -->
+                    <div class="col-md-6 text-center">
+                        <img src="contact2.jpg" alt="Me" class="img-fluid rounded" style="max-width: 60%; height: auto;">
+                    </div>
+            </div>
+                   
+                            
+                <div class="social-icons mt-3">
+                    <a href="https://www.linkedin.com/in/sherina-zheng-48b287224/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/shereena.zzz/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/yushan.zheng.71?mibextid=LQQJ4d&rdid=AldZCZdnI1zyAS43&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14VWq31GvQ%2F%3Fmibextid%3DLQQJ4d" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://github.com/Sherina-Zheng" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i> <!-- GitHub Icon -->
+                    </a>
+                </div>
+            </div>
+        </div>
+
+<!-- Bootstrap JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Include EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="contact.js"></script>
+
+
+</body>
+
+
