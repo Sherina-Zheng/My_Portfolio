@@ -2,14 +2,24 @@
 
 body {
     height:100vh;
-    background-image: url('contact.JPG');
+    background-image: url('sunset.jpeg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: "Barlow", sans-serif;
     font-weight: 400;
     font-style: normal;
   }
+
+  /* .parallax {
+    height: 100vh;
+    background-image: url('contact.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} */
 
 /* Styling the navbar */
 .navbar {
@@ -55,23 +65,10 @@ p {
     max-height: 300px; /* Set a max height */
     overflow-y: auto;  /* Add vertical scrolling if content exceeds max height */
     line-height: 1.2;  /* Adjust line height for better spacing */
-    max-width: 320px;
+    max-width: 380px;
 }
 
-  
-/* h1 {
-    color:antiquewhite;
-    text-shadow: 15px 10px gainsboro;
-}
-h2 {
-    color:antiquewhite;
-}
-
-span {
-    margin-left: 50px;
-    color: olive; 
-} */
-
+/* Welcome cursive */
 .Welcome {
     font-family: Cursive;
 }
@@ -80,23 +77,18 @@ span {
     font-family: Cursive;
 }
 
-.Aspiring-title {
+/* .Aspiring-title {
     font-size: 18px;
-}
+} */
 
+h5 {
+    color:green;
+}
 
 #Name {
     color:purple
 }
 
-.job-title {
-    color: burlywood
-}
-
-/* Hover effect on body */
-/* p:hover {
-    font-size: 18px;
-} */
 
 span::before {
     margin-left: 10px;

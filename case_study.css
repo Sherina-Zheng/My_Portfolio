@@ -1,0 +1,82 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('LAKE-BACKGROUND.JPG');
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+} */
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.case {
+    background: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.case h2 {
+    margin-top: 0;
+    color: #86BAA1;
+}
+
+.case p {
+    margin: 10px 0;
+}
+
+.case a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #86BAA1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.case a:hover {
+    text-decoration: underline;
+}
+
+/* Footer stylling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: aliceblue;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .case {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+

@@ -31,7 +31,7 @@ function uploadAndIdentifyPlantID(){
         console.log('base64Image',base64Image);
 
         // Store all the variables for the API call
-        const apiKey = 'vzXE1CVyQCHmxiv8haid9rRnP5Kz5MoycrcJgRxrFQbJHQift0'
+        const apiKey = 'vzXE1CVyQCHmxiv8haid9rRnP5Kz5MoycrcJgRxrFQbJHQift0';
         const latitude = 49.207;
         const longitude = 16.608;
         const health = 'all';
@@ -53,14 +53,15 @@ function uploadAndIdentifyPlantID(){
                 "Content-Type": "application/json"
             }
         })
-    .then(function(response){
+    // This is the pending state of the promise
+    .then(function(response) {
         console.log('Response from Plant ID API',response.data);
         displayPlantIDInfo(response.data, base64Image);
     })
     // Error state of promise
     .catch(function(error) {
-        // alert(`Error: ${error}❌❌❌`);
-        console.error('Error',error);
+        alert(`Error: ${error.response.data} ❌❌❌`);
+        console.error('Error:',error);
     });
 };
 
@@ -93,7 +94,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
     // Create a new <p> tag element for the plant title.
     const plantNameElement = document.createElement('p');
     // Add the name of the plant to the innerHTML of the <p> tag we created.
-    plantNameElement.innerHTML = `<strong> Name </strong> ${plantIdClassification.suggestions[0].name};`
+    plantNameElement.innerHTML = `<strong> Name: </strong> ${plantIdClassification.suggestions[0].name}`;
     // Append the new divwe created to the api result container that we grabbed from our html.
     plantNameContainer.appendChild(plantNameElement);
 
@@ -119,7 +120,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
     // Create a new <p> tag element for the probability text.
     const probabilityNameElement = document.createElement('p');
     // Add the probability text to the innerHTML of the new <p> tag created.
-    probabilityNameElement.innerHTML = `<strong> Probability </strong> ${probabilityOfPlant}`;
+    probabilityNameElement.innerHTML = `<strong> Probability: </strong> ${probabilityOfPlant}`;
     // Append the new div we created to the probabilityNameContainer we grabbed from our html.
     probabilityNameContainer.appendChild(probabilityNameElement);
 
@@ -139,7 +140,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
         window.location.reload();
     }
     // Add the boolean text to the innerHTML of the new <p> tag we created.
-    isPlantElement.innerHTML = `<strong>Is Plant</strong>${isPlant}`;
+    isPlantElement.innerHTML = `<strong>Is Plant:</strong>${isPlant}`;
     // Append the new div we created to the isPlantContainer we created.
     isPlantContainer.appendChild(isPlantElement);
 
@@ -154,7 +155,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
     // Create a new <p> tag element for the common name text.
     const commonNameElement = document.createElement('p');
     // Add the common name text to the inner HTML of the new <p> tag we created.
-    commonNameElement.innerHTML = `<strong>Common Name</strong> ${commonName}`;
+    commonNameElement.innerHTML = `<strong>Common Name:</strong> ${commonName}`;
     // Append the new div we created to the comonNameContainer we created.
     commonNameContainer.appendChild(commonNameElement);
 
@@ -169,7 +170,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
     // Create a new <p> tag element for the description text.
     const descriptionElement = document.createElement('p');
     // Add the description text to the inner HTML of the new <p> tag we created.
-    descriptionElement.innerHTML = `<strong>Description</strong> ${plantDescription}`;
+    descriptionElement.innerHTML = `<strong>Description:</strong> ${plantDescription}`;
     // Append the new div we created to the container we grabbed from the HTML.
     descriptionContainer.appendChild(descriptionElement);
 
@@ -206,7 +207,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
     //Grab value from API Response
     const plantDiseaseName = plantIdDisease.suggestions[0].name;
     //Grab container from front end
-    const plantDiseaseNameContainer = document.getElementById('plant-disease-name-container')
+    const plantDiseaseNameContainer = document.getElementById('plant-disease-name-container');
     //create a new p tag element
     const plantDiseaseNameElement = document.createElement('p');
     //add the text to the inner html of the new p tag we created
@@ -225,7 +226,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
     // create a new <p> tag element
     const plantDiseaseProbabilityElement = document.createElement('p');
     // add text to the innerHTML of the new <p> tag we created
-    plantDiseaseProbabilityElement.innerHTML = `<strong>Disease Probability:</strong> ${plantDiseaseProbability}`
+    plantDiseaseProbabilityElement.innerHTML = `<strong>Disease Probability:</strong> ${plantDiseaseProbability}`;
     // append the new div we created to the container we grabed from our html
     plantDiseaseProbabilityContainer.appendChild(plantDiseaseProbabilityElement);
 
@@ -246,7 +247,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
 
 
     // ======================================
-    //  DISEASE TREATMENT [:eyes: SAVE THE BEST FOR LAST USE A LOOP IN THE API FOR TREATMENTS]
+    //  DISEASE TREATMENT [SAVE THE BEST FOR LAST USE A LOOP IN THE API FOR TREATMENTS]
     // ======================================
     // Grab value from API response
     const plantDiseaseTreatment = plantIdDisease.suggestions[0].details.treatment;
@@ -254,6 +255,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
     const plantDiseaseTreatmentContainer = document.getElementById('plant-disease-treatment');
     // create a new <p> tag element
     const plantDiseaseTreatmentElement = document.createElement('p');
+
     // Do a check if the plant is dead and the object is empty we let the user know that there is no treatment avaiable for dead plants
     if (Object.keys(plantDiseaseTreatment).length === 0) {
         // add text to the innerHTML of the new <p> tag we created
@@ -274,7 +276,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
         plantDiseaseTreatmentContainer.innerHTML += plantDiseaseTreatmentText;
         }
     }
-    }
+}
 
 
 
