@@ -23,10 +23,11 @@ body {
     text-align: center;
 } */
 
-header h1 {
+/* header h1 {
     margin: 0;
     font-size: 2.5rem;
-}
+    font: cursive;
+} */
 
 .case {
     background: white;
@@ -55,6 +56,11 @@ header h1 {
 
 .case a:hover {
     text-decoration: underline;
+}
+
+.case img {
+    display: flex; 
+    align-items: center;
 }
 
 /* Footer stylling */
