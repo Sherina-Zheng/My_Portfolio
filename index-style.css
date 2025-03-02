@@ -11,7 +11,7 @@ body {
     font-weight: 400;
     font-style: normal;
   }
-  
+
   .case {
     background: white;
     margin: 20px 0;
@@ -73,6 +73,7 @@ p {
     overflow-y: auto;  /* Add vertical scrolling if content exceeds max height */
     line-height: 1.2;  /* Adjust line height for better spacing */
     max-width: 380px;
+    text-align: center;
 }
 
 /* Welcome cursive */
@@ -82,13 +83,13 @@ p {
 }
 /* 2px 2px 4px rgba(0, 0, 0, 0.5); */
 /* About, Projects */
-body h2 {
+/* body h2 {
     color:#86BAA1;
-}
+} */
 /* Subtitles */
-body h5 {
+/* body h5 {
     color:#86BAA1;
-}
+} */
 /* Who's SZ anyway? */
 #Name {
     color:purple
@@ -110,6 +111,13 @@ span::before {
         background-color: olivedrab;
     }
 } */
+
+/* Carousel styles */
+/* .carousel-image {
+    width: 20%; /* Adjust as needed */
+    /* height: auto; /* Maintain aspect ratio */
+    /* margin: 0 auto; /* Center the image */
+  /* } */ */ */ */
 
 
 
