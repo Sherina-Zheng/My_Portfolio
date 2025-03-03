@@ -14,11 +14,21 @@ body {
 
   .case {
     background: white;
+    width: 90%;
     margin: 20px 0;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(171, 121, 121, 0.1);
 }
+
+.case p {
+    margin-bottom: 1.5em; /* Space between paragraphs */
+    line-height: 1.6; /* Space between lines */
+    font-size: 1.1em; /* Slightly larger font size */
+    font-weight: 400; /* Normal font weight */
+    color: #333; /* Darker text color */
+
+  }
   /* .parallax {
     height: 100vh;
     background-image: url('contact.JPG');
@@ -73,8 +83,21 @@ p {
     overflow-y: auto;  /* Add vertical scrolling if content exceeds max height */
     line-height: 1.2;  /* Adjust line height for better spacing */
     max-width: 380px;
-    text-align: center;
+    /* text-align: center; */
 }
+
+/* carousel captions */
+.carousel-caption {
+    display: block;
+    text-align: center; /* Center-align all text */
+    background: rgba(0, 0, 0, 0.5);
+
+  }  
+  .carousel-caption h5,
+  .carousel-caption p {
+    margin: 0 auto; /* Center the elements */
+    width: 100%; /* Ensure full width for centering */
+  }
 
 /* Welcome cursive */
 .Welcome {
@@ -83,42 +106,22 @@ p {
 }
 /* 2px 2px 4px rgba(0, 0, 0, 0.5); */
 /* About, Projects */
-/* body h2 {
+body h2 {
     color:#86BAA1;
-} */
+}
 /* Subtitles */
 /* body h5 {
     color:#86BAA1;
 } */
+
 /* Who's SZ anyway? */
 #Name {
-    color:purple
+    color:#86BAA1
 }
 
 span::before {
     margin-left: 10px;
 }
-
-/* @media screen and (max-width:480px) {
-    h2 {
-        background-color: bisque;
-    }
-}
-
-@media screen and (max-width:900px) {
-
-    body {
-        background-color: olivedrab;
-    }
-} */
-
-/* Carousel styles */
-/* .carousel-image {
-    width: 20%; /* Adjust as needed */
-    /* height: auto; /* Maintain aspect ratio */
-    /* margin: 0 auto; /* Center the image */
-  /* } */ */ */ */
-
 
 
 /* Footer stylling */
