@@ -1,12 +1,19 @@
- console.log ("Hello World")
+// ======================
+//  SHARED HELPER FUNCTION
+// ======================
+function readFileAsBase64(file, callback) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        callback(e.target.result);
+    };
+    reader.readAsDataURL(file);
+}
 
-
-// axios.get("https://dummyjson.com/recipes")
-//     .then(function(response){
-//         console.log(response)
-//     })
-
+// ======================
+//  PLANT HEALTH API
+// ======================
 function uploadAndIdentifyPlantID(){
+    console.log("Plant Health API function called");
     // Retreive the photo from the frontend.
     const photoInput = document.getElementById('photoInput');
     
@@ -279,6 +286,105 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
 }
 
 
+// ======================
+//  MUSHROOM API
+// ======================
+function uploadAndIdentifyMushroomID() {
+    console.log("Mushroom API function called");
+    const photoInput = document.getElementById('photoInput');
+
+    if (photoInput.files.length === 0) {
+        alert("Please select your photo to identify.");
+        return;
+    }
+
+    const selectedFile = photoInput.files[0];
+    readFileAsBase64(selectedFile, function (base64Image) {
+        const apiKey = '25PFDaIDBNGvl4Q1YL0ICXj7pGYMwjvxdQtqwrblC82revCaaA';
+        const apiUrl = 'https://mushroom.kindwise.com/api/v1';
+
+        axios.post(apiUrl, {
+            "images": [base64Image],
+            "similar_images": true
+        }, {
+            headers: {
+                "Api-Key": apiKey,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(function (response) {
+            console.log('Response from Mushroom API:', response.data);
+            displayMushroomInfo(response.data, base64Image);
+        })
+        .catch(function (error) {
+            alert(`Error: ${error.response.data} ❌❌❌`);
+            console.error('Error:', error);
+        });
+    });
+}
+
+function displayMushroomInfo(apiResponse, base64Image) {
+    // Display mushroom information
+    const previewImage = document.getElementById('previewImage');
+    previewImage.src = base64Image;
+
+    const nameContainer = document.getElementById('name-container');
+    nameContainer.innerHTML = `<strong>Name:</strong> ${apiResponse.suggestions[0].name}`;
+
+    const probabilityContainer = document.getElementById('probability-container');
+    probabilityContainer.innerHTML = `<strong>Probability:</strong> ${apiResponse.suggestions[0].probability}%`;
+
+}
+
+// ======================
+//  INSECT API
+// ======================
+function uploadAndIdentifyInsectID() {
+    const photoInput = document.getElementById('photoInput');
+
+    if (photoInput.files.length === 0) {
+        alert("Please select your photo to identify.");
+        return;
+    }
+
+    const selectedFile = photoInput.files[0];
+    readFileAsBase64(selectedFile, function (base64Image) {
+        const apiKey = 'Z8cB2d1XKPNQUMrBO0tkRalMZgqsZC1uJDzES3MH9TrsG8z5Up';
+        const apiUrl = 'https://insect.kindwise.com/api/v1';
+
+        axios.post(apiUrl, {
+            "images": [base64Image],
+            "similar_images": true
+        }, {
+            headers: {
+                "Api-Key": apiKey,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(function (response) {
+            console.log('Response from Insect API:', response.data);
+            displayInsectInfo(response.data, base64Image);
+        })
+        .catch(function (error) {
+            alert(`Error: ${error.response.data} ❌❌❌`);
+            console.error('Error:', error);
+        });
+    });
+}
+
+function displayInsectInfo(apiResponse, base64Image) {
+    // Display insect information
+    const previewImage = document.getElementById('previewImage');
+    previewImage.src = base64Image;
+
+    const nameContainer = document.getElementById('name-container');
+    nameContainer.innerHTML = `<strong>Name:</strong> ${apiResponse.suggestions[0].name}`;
+
+    const probabilityContainer = document.getElementById('probability-container');
+    probabilityContainer.innerHTML = `<strong>Probability:</strong> ${apiResponse.suggestions[0].probability}%`;
+
+    // Add more fields as needed...
+}
 
 
 
@@ -288,41 +394,3 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
 
 
 
-
-
-
-
-
-
-
-
-
-
-// Practice conditional statement in class
-// let score = prompt("What is your score?")
-
-// if (score >= 90) {
-//     alert('Your grade is A.')
-// }
-// else if (score >=80 && score <90) {
-//     alert('Your grade is B.')
-// }
-// else if(score >=70 && score <80) {
-//     alert('Your grade is C.')
-// }
-// else {
-//     alert('Unfortunately, You Failed.')
-// }
-
-// console.log (score)
-
-// Practice in function 
-// let name = prompt('Please enter your name here.');
-// let age = prompt('Please enter your age here.');
-
-// function introduction (name, age) {
-
-//     alert(`Hello, my name is ${name} and I am ${age} years old.`)
-// }
-
-// introduction(name, age)
