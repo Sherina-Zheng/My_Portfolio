@@ -12,6 +12,7 @@ body {
     font-style: normal;
   }
 
+  /* The intro & skills part */
   .case {
     background: white;
     width: 90%;
@@ -28,6 +29,27 @@ body {
     font-weight: 400; /* Normal font weight */
     color: #333; /* Darker text color */
 
+  }
+
+  .case:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+  }
+  
+  .case:hover .hover-photo {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  
+  .case:hover h2 {
+    color: #2a2a2a;
+    letter-spacing: 2px;
+  }
+  
+  .case:hover p {
+    color: #444;
+    transition-delay: 0.1s;
   }
   /* .parallax {
     height: 100vh;
@@ -123,6 +145,14 @@ span::before {
     margin-left: 10px;
 }
 
+/* section intro and skills  */
+section p {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically */
+  align-items: center; /* Centers horizontally */
+}
 
 /* Footer stylling */
 .page-footer {

@@ -110,11 +110,39 @@
     background-color: rgba(255, 255, 255, 0.2); 
     color:black;
   }
+
+  /* Edibility Status Styles */
+.edibility {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.edibility.edible { background: #d4edda; color: #155724; }
+.edibility.poisonous { background: #f8d7da; color: #721c24; }
+.edibility.unknown { background: #fff3cd; color: #856404; }
   
   
   body {
     background-image: url(pics/lakebackground.jpeg);
+    font-family: 'Open Sans', sans-serif;
   }
+
+  /* Custom API Status Styles */
+#api-status {
+  display: none; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out;
+}
+
+#api-status.show {
+  display: block;
+  opacity: 1;
+}
+
+#api-status.fade {
+  opacity: 0;
+}
   
   /* Footer stylling */
   footer {

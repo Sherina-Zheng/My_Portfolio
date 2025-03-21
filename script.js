@@ -16,7 +16,7 @@ function uploadAndIdentifyPlantID(){
     console.log("Plant Health API function called");
     // Retreive the photo from the frontend.
     const photoInput = document.getElementById('photoInput');
-    
+   
     // If no photoes are selected, this alerts users to upload a photo.
     if(photoInput.files.length === 0){
         alert("Please select your photo to identify.");
@@ -42,11 +42,11 @@ function uploadAndIdentifyPlantID(){
         const latitude = 49.207;
         const longitude = 16.608;
         const health = 'all';
-        const similarImages = true; 
+        const similarImages = true;
         const details = 'common_names,url,description,taxonomy,rank,gbif_id,inaturalist_id,image,synonyms,edible_parts,watering,propagation_methods,treatment,cause'
         const language = 'en'
         const apiUrlPlantID = `https://plant.id/api/v3/identification?details=${details}&language=${language}`;
-        
+       
         // Making the first API call with the base64 image
         axios.post(apiUrlPlantID, {
             "images":[base64Image],
@@ -205,7 +205,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
     // Grab the HTML where image will be placed.
     const similarImageWithDiseaseHTML = document.getElementById('plant-similar-image-with-disease');
     // Set the image HTML src attribute to the image
-    similarImageWithDiseaseHTML.src = plantSimilarImageWithDisease; 
+    similarImageWithDiseaseHTML.src = plantSimilarImageWithDisease;
 
 
     // ======================================
@@ -222,7 +222,7 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
     //append the new div we created to the container we grabbed from our html
     plantDiseaseNameContainer.appendChild(plantDiseaseNameElement);
 
-    
+   
     // ======================================
     //  DISEASE PROBABILITY
     // ======================================
@@ -284,112 +284,6 @@ function displayPlantIDInfo(plantIdResponse,base64Image){
         }
     }
 }
-
-
-// ======================
-//  MUSHROOM API
-// ======================
-function uploadAndIdentifyMushroomID() {
-    console.log("Mushroom API function called");
-    const photoInput = document.getElementById('photoInput');
-
-    if (photoInput.files.length === 0) {
-        alert("Please select your photo to identify.");
-        return;
-    }
-
-    const selectedFile = photoInput.files[0];
-    readFileAsBase64(selectedFile, function (base64Image) {
-        const apiKey = '25PFDaIDBNGvl4Q1YL0ICXj7pGYMwjvxdQtqwrblC82revCaaA';
-        const apiUrl = 'https://mushroom.kindwise.com/api/v1';
-
-        axios.post(apiUrl, {
-            "images": [base64Image],
-            "similar_images": true
-        }, {
-            headers: {
-                "Api-Key": apiKey,
-                "Content-Type": "application/json"
-            }
-        })
-        .then(function (response) {
-            console.log('Response from Mushroom API:', response.data);
-            displayMushroomInfo(response.data, base64Image);
-        })
-        .catch(function (error) {
-            alert(`Error: ${error.response.data} ❌❌❌`);
-            console.error('Error:', error);
-        });
-    });
-}
-
-function displayMushroomInfo(apiResponse, base64Image) {
-    // Display mushroom information
-    const previewImage = document.getElementById('previewImage');
-    previewImage.src = base64Image;
-
-    const nameContainer = document.getElementById('name-container');
-    nameContainer.innerHTML = `<strong>Name:</strong> ${apiResponse.suggestions[0].name}`;
-
-    const probabilityContainer = document.getElementById('probability-container');
-    probabilityContainer.innerHTML = `<strong>Probability:</strong> ${apiResponse.suggestions[0].probability}%`;
-
-}
-
-// ======================
-//  INSECT API
-// ======================
-function uploadAndIdentifyInsectID() {
-    const photoInput = document.getElementById('photoInput');
-
-    if (photoInput.files.length === 0) {
-        alert("Please select your photo to identify.");
-        return;
-    }
-
-    const selectedFile = photoInput.files[0];
-    readFileAsBase64(selectedFile, function (base64Image) {
-        const apiKey = 'Z8cB2d1XKPNQUMrBO0tkRalMZgqsZC1uJDzES3MH9TrsG8z5Up';
-        const apiUrl = 'https://insect.kindwise.com/api/v1';
-
-        axios.post(apiUrl, {
-            "images": [base64Image],
-            "similar_images": true
-        }, {
-            headers: {
-                "Api-Key": apiKey,
-                "Content-Type": "application/json"
-            }
-        })
-        .then(function (response) {
-            console.log('Response from Insect API:', response.data);
-            displayInsectInfo(response.data, base64Image);
-        })
-        .catch(function (error) {
-            alert(`Error: ${error.response.data} ❌❌❌`);
-            console.error('Error:', error);
-        });
-    });
-}
-
-function displayInsectInfo(apiResponse, base64Image) {
-    // Display insect information
-    const previewImage = document.getElementById('previewImage');
-    previewImage.src = base64Image;
-
-    const nameContainer = document.getElementById('name-container');
-    nameContainer.innerHTML = `<strong>Name:</strong> ${apiResponse.suggestions[0].name}`;
-
-    const probabilityContainer = document.getElementById('probability-container');
-    probabilityContainer.innerHTML = `<strong>Probability:</strong> ${apiResponse.suggestions[0].probability}%`;
-
-    // Add more fields as needed...
-}
-
-
-
-
-
 
 
 
